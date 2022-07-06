@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
 
 @Component({
   selector: 'app-song-list',
   templateUrl: './song-list.component.html',
-  styleUrls: ['./song-list.component.scss']
+  styleUrls: ['./song-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SongListComponent implements OnInit {
+  @Input() songList: string[] = [];
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
+    console.log(this.songList);
   }
-
 }
